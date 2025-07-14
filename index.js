@@ -126,6 +126,8 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 var vite_config_default = defineConfig({
+  base: "/Portfolio/",
+  // 👈 Important for GitHub Pages routing
   plugins: [
     react(),
     runtimeErrorOverlay(),
