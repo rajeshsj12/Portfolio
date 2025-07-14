@@ -103,9 +103,3 @@
     "bufferutil": "^4.0.8"
   }
 }
-
-"homepage": "https://rajeshsj12.github.io/portfolio",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-}
