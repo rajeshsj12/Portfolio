@@ -1,21 +1,8 @@
-# Rajesh S Portfolio Website
+# Rajesh S - Data Analyst Portfolio
 
 ## Overview
 
-This is a professional portfolio website for Rajesh S, a Results-Driven Data Analyst with 4.5 years of operations experience and expertise in Python, SQL, and Power BI. The application is built as a modern full-stack web application with a React frontend, Express.js backend, and PostgreSQL database integration.
-
-## Recent Changes (Updated January 2025)
-
-- Updated professional title from "Data Analytics Professional" to "Results-Driven Data Analyst" 
-- Increased experience from 3+ to 4.5+ years
-- Changed Data Analytics course status from "In Progress" to "Completed"
-- Added GitHub and LeetCode profile links throughout the site
-- Updated project portfolio to include actual projects from resume:
-  - Warehouse Operational Efficiency & BI Dashboard (Bosch)
-  - Strategic Sales & Profitability Analyzer
-  - Macro Economic Analysis
-- Enhanced technical skills to reflect current expertise level
-- Updated experience dates and descriptions to match current resume
+This is a personal portfolio website for Rajesh S, an aspiring data analyst and fresh graduate with MBA in Operations & Business Analytics. The website is built as a modern, responsive single-page application using vanilla HTML, CSS, and JavaScript. It features vibrant multi-color animations, interactive elements, and a fresh design focused on showcasing technical skills and academic projects rather than work experience.
 
 ## User Preferences
 
@@ -23,116 +10,114 @@ Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
-The application follows a modern full-stack architecture with clear separation between frontend and backend concerns:
-
 ### Frontend Architecture
-- **Framework**: React 18 with TypeScript
-- **Routing**: Wouter for client-side routing
-- **UI Library**: Shadcn/UI components built on Radix UI primitives
-- **Styling**: Tailwind CSS with CSS variables for theming
-- **State Management**: TanStack Query for server state management
-- **Build Tool**: Vite for fast development and optimized production builds
+The website follows a traditional client-side architecture with separation of concerns:
+- **HTML**: Semantic structure with proper accessibility considerations
+- **CSS**: Modular stylesheets with custom properties (CSS variables) for theming
+- **JavaScript**: Vanilla JavaScript with component-based initialization pattern
 
-### Backend Architecture
-- **Runtime**: Node.js with Express.js framework
-- **Language**: TypeScript with ES modules
-- **API Style**: RESTful endpoints for contact form submissions
-- **Middleware**: Express middleware for request logging and error handling
-
-### Database Architecture
-- **Database**: PostgreSQL with Neon serverless driver
-- **ORM**: Drizzle ORM for type-safe database operations
-- **Schema Management**: Drizzle Kit for migrations and schema management
-- **Storage Interface**: Abstracted storage layer supporting both database and in-memory implementations
+### Design System
+- **Typography**: Inter font family for body text, JetBrains Mono for code/technical elements
+- **Color Scheme**: Vibrant multi-color palette with purple, blue, green, pink, and orange gradients for visual attraction
+- **Responsive Design**: Mobile-first approach with flexible layouts
+- **Animation System**: CSS keyframe animations with JavaScript triggers and colorful visual elements
 
 ## Key Components
 
-### Frontend Components
-1. **Navigation**: Fixed navigation with smooth scrolling to sections
-2. **Hero Section**: Landing area with call-to-action buttons
-3. **About Section**: Professional journey and core strengths
-4. **Skills Section**: Animated skill bars with categories (Data Analysis, Operations, Technical)
-5. **Experience Section**: Career timeline with achievements
-6. **Education Section**: Academic background and certifications
-7. **Portfolio Section**: Project showcase with metrics and technologies
-8. **Contact Section**: Interactive contact form with validation
-9. **Footer**: Social links and contact information
+### Navigation System
+- Fixed navigation bar with scroll effects
+- Mobile-responsive hamburger menu
+- Active section highlighting based on scroll position
+- Smooth scroll functionality for anchor links
 
-### Backend Components
-1. **Route Handlers**: Contact form submission and retrieval endpoints
-2. **Storage Layer**: Abstracted interface supporting multiple storage backends
-3. **Schema Validation**: Zod schemas for request/response validation
-4. **Error Handling**: Centralized error handling middleware
+### Animation Framework
+- Scroll-triggered animations using Intersection Observer API
+- Predefined animation classes (fadeInUp, fadeInRight, fadeInLeft, etc.)
+- Counter animations for statistics
+- Skill bar progress animations
+- Typing effect for dynamic text
 
-### Database Schema
-- **Users Table**: Basic user management (id, username, password)
-- **Contact Submissions Table**: Form submissions (id, firstName, lastName, email, company, subject, message, createdAt)
+### Interactive Elements
+- Project toggles and filtering
+- Animated skill progress bars
+- Particle background effects
+- Responsive image galleries
+
+### Content Sections
+- Hero section with typing animation and colorful data visualizations
+- About section focused on fresh graduate background and education
+- Skills showcase with multi-colored animated progress bars
+- Projects portfolio featuring academic projects and technical skill demonstrations
+- Contact section optimized for entry-level opportunities (removed experience section)
+- No contact forms as requested by user
 
 ## Data Flow
 
-1. **Contact Form Submission**:
-   - User fills out contact form in frontend
-   - Form data validated using react-hook-form with Zod resolvers
-   - POST request sent to `/api/contact` endpoint
-   - Backend validates data using Zod schema
-   - Data stored in PostgreSQL via Drizzle ORM
-   - Success/error response sent back to frontend
-   - Toast notification displayed to user
+### Static Content Flow
+1. HTML provides semantic structure and content
+2. CSS variables define design tokens and theming
+3. JavaScript enhances interactivity and animations
+4. External CDNs provide fonts and icons
 
-2. **Static Content Rendering**:
-   - Portfolio content is statically defined in React components
-   - No dynamic fetching required for main portfolio sections
-   - Smooth scrolling navigation between sections
+### Animation Flow
+1. Page load triggers initial animations
+2. Scroll events activate intersection observers
+3. Observers trigger CSS animations for elements entering viewport
+4. User interactions trigger additional animations (hover, click)
+
+### Navigation Flow
+1. User clicks navigation link or scrolls
+2. JavaScript calculates current section
+3. Active navigation state updates
+4. Smooth scroll behavior activates (if link clicked)
 
 ## External Dependencies
 
-### Frontend Dependencies
-- **UI Framework**: React with TypeScript
-- **Component Library**: Radix UI primitives with Shadcn/UI wrapper
-- **Styling**: Tailwind CSS with PostCSS
-- **State Management**: TanStack Query for server state
-- **Form Handling**: React Hook Form with Zod validation
-- **Icons**: Lucide React icons
-- **Date Handling**: date-fns library
+### Content Delivery Networks
+- **Google Fonts**: Inter and JetBrains Mono font families
+- **Font Awesome**: Icon library (version 6.4.0)
 
-### Backend Dependencies
-- **Web Framework**: Express.js with TypeScript
-- **Database**: PostgreSQL with @neondatabase/serverless driver
-- **ORM**: Drizzle ORM with Zod integration
-- **Validation**: Zod for schema validation
-- **Session Management**: connect-pg-simple for PostgreSQL session store
-
-### Development Dependencies
-- **Build Tool**: Vite with React plugin
-- **TypeScript**: Full TypeScript support across frontend and backend
-- **Development Tools**: TSX for TypeScript execution, ESBuild for production builds
+### Browser APIs Used
+- **Intersection Observer API**: For scroll-triggered animations
+- **requestAnimationFrame**: For smooth animations
+- **CSS Custom Properties**: For dynamic theming
+- **Scroll Behavior API**: For smooth scrolling
 
 ## Deployment Strategy
 
-### Development Environment
-- **Frontend**: Vite dev server with HMR (Hot Module Replacement)
-- **Backend**: TSX for direct TypeScript execution
-- **Database**: Environment variable configuration for DATABASE_URL
-- **Replit Integration**: Specialized plugins for Replit development environment
+### Static Hosting
+The website is designed for static hosting environments:
+- No server-side processing required
+- All assets are client-side
+- Can be deployed to any static hosting service (Netlify, Vercel, GitHub Pages, etc.)
 
-### Production Build Process
-1. **Frontend Build**: Vite builds React app to `dist/public`
-2. **Backend Build**: ESBuild bundles TypeScript server to `dist/index.js`
-3. **Database Migrations**: Drizzle Kit handles schema deployment
-4. **Static Serving**: Express serves built frontend assets in production
+### File Structure
+```
+/
+├── index.html          # Main HTML file
+├── css/
+│   ├── style.css       # Main stylesheet with design system
+│   └── animations.css  # Animation definitions
+└── js/
+    └── main.js         # Main JavaScript functionality
+```
 
-### Environment Configuration
-- **Development**: NODE_ENV=development with Vite middleware
-- **Production**: NODE_ENV=production with static file serving
-- **Database**: PostgreSQL connection via DATABASE_URL environment variable
-- **Session Management**: PostgreSQL-backed sessions for scalability
+### Performance Considerations
+- Minimal external dependencies
+- CSS and JavaScript are concatenated for production
+- Images should be optimized for web
+- Lazy loading implemented for below-the-fold content
+- Critical CSS inlined for faster initial render
 
-### Key Architectural Decisions
+### Browser Compatibility
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Progressive enhancement for older browsers
+- Fallbacks for CSS Grid and Flexbox
+- Polyfills for Intersection Observer if needed
 
-1. **Database Choice**: PostgreSQL chosen for reliability and Drizzle ORM compatibility
-2. **Storage Abstraction**: Interface-based storage layer allows for easy testing and future database changes
-3. **Type Safety**: Full TypeScript coverage with shared schemas between frontend and backend
-4. **Component Architecture**: Modular React components with clear separation of concerns
-5. **Form Handling**: React Hook Form for performance with Zod for type-safe validation
-6. **Styling Strategy**: Tailwind CSS with CSS variables for consistent theming
-7. **State Management**: TanStack Query for server state, local state for UI interactions
+### SEO Optimization
+- Semantic HTML structure
+- Meta tags for description and social sharing
+- Proper heading hierarchy
+- Alt text for images
+- Clean URL structure with anchor links
