@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initNavigation();
     initScrollAnimations();
-    initCounters();
+    initCounters();      // Handles elements with data-target
+    initCountersNew();   // Handles elements with data-target-new   
     initSkillBars();
     initProjectToggles();
     initParticles();
@@ -89,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Trigger counter animations
                     if (entry.target.classList.contains('hero')) {
                         animateCounters();
+                        animateCountersNew();
                     }
                 }
             });
@@ -114,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.animateCounters = function() {
             counters.forEach(counter => {
                 const target = parseInt(counter.getAttribute('data-target'));
-                const duration = 2000;
+                const duration = 1000;
                 const step = target / (duration / 16);
                 let current = 0;
                 
@@ -131,6 +133,32 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         };
     }
+
+    function initCountersNew() {
+        const counters = document.querySelectorAll('.stat-number[data-target-new]');
+
+        window.animateCountersNew = function() {
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target-new'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += step;
+
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                        counter.textContent = target + '+'; // 🎯 Adds "+" only when done
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 16);
+            });
+        };
+    }
+
     
     // Skill bar animations
     function initSkillBars() {
